@@ -1,18 +1,16 @@
-import React from 'react'
 
 
+import Image from 'next/image'
 
 const CardInput = () => {
-
-    const styles = {
-        container: [
-          "bg-white w-96 pb-20 rounded-tl-[20px]", 
-          "rounded-tr-[20px] rounded-br-[120px] rounded-bl-[20px]"
-        ]
-      }
-
   return (
-    <div className='styles.container'>CardInput</div>
+    <>
+      <div className=' bg-violet-600'>oi</div>
+      <div>ola</div>
+
+
+    </>
+    
   )
 }
 

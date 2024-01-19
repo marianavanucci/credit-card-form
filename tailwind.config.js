@@ -8,6 +8,10 @@ module.exports = {
   theme: {
     extend: {
 
+      backgroundImage: {
+        'bg-main-mobile': "url('/images/bg-main-mobile.png')",
+      },
+
       colors: {
         'brand': {
           100: '#dedddf',
@@ -15,6 +19,13 @@ module.exports = {
           300: '#21092f',
         }
       },
+      width: {
+        '95': '20.833rem',
+        '360': '80rem',
+      }
+
+    
+
     },
   },
   plugins: [],
