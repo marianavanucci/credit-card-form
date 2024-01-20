@@ -9,7 +9,7 @@ const CardInput = () => {
     cardContainer: " bg-bg-main-mobile w-[375px] h-72",
     cardBack: " ml-20 mt-8 h-0",
     cardFront:" ml-4 mt-[90px] mb-12 ",
-    dataContainer: " w-[340px] bg-cyan-300 mt-10 ml-[3px]",
+    dataContainer: " w-[340px] bg-white mt-10 ml-[3px]",
     nameContainer: " flex flex-col ",
     nameLabel: " text-[12px] font-medium tracking-widest",
     nameInput: " border px-4 py-2 w-[340px] rounded-lg ",
@@ -34,10 +34,11 @@ const CardInput = () => {
       <div className={styles.container}>
         <div class={styles.cardContainer}>
           <div className={styles.cardBack}>
-            <Image src="/images/bg-card-back.png" width="280" height="280"></Image>
+            <Image src="/images/bg-card-back.png" width="280" height="280" alt="back card"></Image>
           </div>
           <div className={styles.cardFront}>
-            <Image src="/images/bg-card-front.png" width="280" height="280"></Image>
+            <Image src="/images/bg-card-front.png" width="280" height="280" alt="front card"></Image>
+
           </div>
         </div>
         <div className={styles.dataContainer}>
@@ -63,6 +64,11 @@ const CardInput = () => {
             </div>
           </div>
           <button className={styles.submitButton} type='submit'>Confirm</button>
+        <div className=' bg-red-700'>
+            <p>0 0 0</p>
+            <p>1234 5678 9123 0000</p>
+
+        </div>
         </div>
       </div>
     
