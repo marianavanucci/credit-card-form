@@ -1,4 +1,8 @@
+"use client"
 import Image from 'next/image'
+
+import { useState } from 'react'
+
 import CardInput from '../../components/CardInput'
 
 
@@ -36,15 +40,23 @@ export default function Home() {
 
   }
 
+  const [name, setName] = useState("JANE APPLESEED")
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name) return
+    console.log("cancelei envio automático do form", name)
+  }
+
   return (
     <>
-      <div className={styles.container}>
+      <form className={styles.container} onSubmit={handleSubmit}>
         <div class={styles.cardContainer}>
         </div>
         <div className={styles.dataContainer}>
           <div className={styles.nameContainer}>
             <label className={styles.nameLabel}>CARDHOLDER NAME</label>
-            <input className={styles.nameInput} type="text" placeholder='e.g. Jane Appleseed' />
+            <input className={styles.nameInput} type="text" placeholder='e.g. Jane Appleseed' value={name} onChange={(e) => setName(e.target.value)} />
           </div>  
           <div className={styles.numberContainer}>
             <label className={styles.numberLabel}>CARD NUMBER</label>
@@ -77,11 +89,11 @@ export default function Home() {
             <p className={styles.ball} ></p>
             <p className={styles.circle}>〇</p>
             <p className={styles.numberResult}>0000 0000 0000 0000</p>
-            <p className={styles.nameResult}>JANE APPLESEED</p>
+            <p className={styles.nameResult}>{name}</p>
             <p className={styles.dateResult}>00/00</p>
         </div>
         </div>
-      </div>
+      </form>
     
     </>
   )
