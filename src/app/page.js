@@ -41,6 +41,11 @@ export default function Home() {
   }
 
   const [name, setName] = useState("JANE APPLESEED")
+  const [number, setNumber] = useState("0000 0000 0000 0000")
+  const [month, setMonth] = useState("00")
+  const [year, setYear] = useState("00")
+  const [cvc, setCvc] = useState("0 0 0")
+  const [error, setError] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,19 +65,19 @@ export default function Home() {
           </div>  
           <div className={styles.numberContainer}>
             <label className={styles.numberLabel}>CARD NUMBER</label>
-            <input  className={styles.numberInput} type="text" placeholder='e.g. 1234 5678 9123 0000' />
+            <input  className={styles.numberInput} type="text" placeholder='e.g. 1234 5678 9123 0000' value={number} onChange={(e) => setNumber(e.target.value)} />
           </div>
           <div  className={styles.mixtedContainer}>
             <div>
               <label className={styles.dateLabel}>EXP. DATE (MM/YY)</label>
               <div className={styles.monthYearContainer} >
-                <input className={styles.monthInput} type="text" placeholder='MM' />
-                <input className={styles.yearInput} type="text" placeholder='YY' />
+                <input className={styles.monthInput} type="text" placeholder='MM' value={month} onChange={(e) => setMonth(e.target.value)} />
+                <input className={styles.yearInput} type="text" placeholder='YY' value={year} onChange={(e) => setYear(e.target.value)}/>
               </div>
           </div>
             <div  className={styles.cvcContainer}>
               <label  className={styles.cvcLabel}>CVC</label>
-              <input  className={styles.cvcInput} type="text" placeholder='e.g. 123' />
+              <input  className={styles.cvcInput} type="text" placeholder='e.g. 123' value={cvc} onChange={(e) => setCvc(e.target.value)} />
             </div>
           </div>
           <button className={styles.submitButton} type='submit'>Confirm</button>
@@ -85,12 +90,12 @@ export default function Home() {
           </div>
           </div>
         <div className={styles.cardPosition}>
-            <p className={styles.cvcResult}>0 0 0</p>
+            <p className={styles.cvcResult}>{cvc}</p>
             <p className={styles.ball} ></p>
             <p className={styles.circle}>〇</p>
-            <p className={styles.numberResult}>0000 0000 0000 0000</p>
+            <p className={styles.numberResult}>{number}</p>
             <p className={styles.nameResult}>{name}</p>
-            <p className={styles.dateResult}>00/00</p>
+            <p className={styles.dateResult}>{month}/{year}</p>
         </div>
         </div>
       </form>
